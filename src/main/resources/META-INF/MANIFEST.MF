@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Premain-Class: com.fengxinzi.learning.agent.PremainDemo
+Agent-Class: com.fengxinzi.learning.agent.AgentmainDemo
+Main-Class: com.fengxinzi.learning.LearningApplication
+Can-Redefine-Classes: true
+Can-Retransform-Classes: true
