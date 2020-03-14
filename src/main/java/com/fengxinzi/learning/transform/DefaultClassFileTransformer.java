@@ -84,24 +84,6 @@ public class DefaultClassFileTransformer implements ClassFileTransformer {
     }
 
     /**
-     * 记录耗时，同上
-     * @param method
-     * @throws CannotCompileException
-     */
-    private void printTime(CtMethod method) throws CannotCompileException {
-        method.instrument(new ExprEditor() {
-            @Override
-            public void edit(MethodCall m) throws CannotCompileException {
-                m.replace("{ long start = System.nanoTime()/1000;\n" +
-                        "$_ = $proceed($$);\n" +
-                        "System.out.println(\"" + "执行方法: "
-                        + method.getDeclaringClass().getName() + "." + method.getName()
-                        + " 耗时:\" + (System.nanoTime()/1000 - start) + \" ms\");} ");
-            }
-        });
-    }
-
-    /**
      * 硬编码--不推荐
      * @param ctClass
      * @throws NotFoundException
